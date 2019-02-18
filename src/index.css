@@ -1,2 +1,76 @@
-@import '../node_modules/bulma/css/bulma.css'  
+@import '../node_modules/bulma/css/bulma.css';
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
+
+h1,h2,h3,h4,h5,h6,strong{
+    font-family: 'Press Start 2P', cursive;
+}
+
+
+.bg-gradient {
+    background: linear-gradient(270deg, #fd3f7d, #e8e648, #2758a5);
+    /* background: linear-gradient(270deg, #ff76cc,#f6ff66, #58fdc3);  */
+    background-size: 600% 600%;
+    -webkit-animation: animateGradient 30s ease infinite;
+    -moz-animation: animateGradient 30s ease infinite;
+    animation: animateGradient 30s ease infinite;
+}
+
+@-webkit-keyframes animateGradient {
+    0% {
+        background-position: 0% 50%
+    }
+    50% {
+        background-position: 100% 50%
+    }
+    100% {
+        background-position: 0% 50%
+    }
+}
+
+@-moz-keyframes animateGradient {
+    0% {
+        background-position: 0% 50%
+    }
+    50% {
+        background-position: 100% 50%
+    }
+    100% {
+        background-position: 0% 50%
+    }
+}
+
+@keyframes animateGradient {
+    0% {
+        background-position: 0% 50%
+    }
+    50% {
+        background-position: 100% 50%
+    }
+    100% {
+        background-position: 0% 50%
+    }
+}
+
+.dotted {
+    opacity: .4;
+    height: 100%;
+    width: 100%;
+    display: block;
+    /* position: absolute; */
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 2.25em 1.6875em;
+    background-image: -webkit-repeating-radial-gradient(center center, #831ed0, rgba(251, 0, 255, .32) 1px, transparent 1px, transparent 98%);
+    background-image: -moz-repeating-radial-gradient(center center, rgba(0, 0, 0, .2), rgba(0, 0, 0, .2) 1px, transparent 1px, transparent 100%);
+    background-image: -ms-repeating-radial-gradient(center center, rgba(0, 0, 0, .2), rgba(0, 0, 0, .2) 1px, transparent 1px, transparent 100%);
+    background-image: repeating-radial-gradient(center center, rgba(0, 0, 0, .2), rgba(0, 0, 0, .2) 1px, transparent 1px, transparent 100%);
+    -webkit-background-size: 3px 3px;
+    -moz-background-size: 3px 3px;
+    background-size: 3px 3px;
+}
+
+.transparent{
+    background: transparent!important;
+}
 

@@ -1,5 +1,5 @@
 .App {
-  text-align: center;
+
 }
 
 .App-logo {
@@ -30,4 +30,25 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+
+.logo{
+  max-width: 28px;
+}
+
+
+.center-children {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.navbar-item{
+  font-family: 'Press Start 2P', cursive;
+}
+
+.padding-top-100{
+  padding-top: 100px;
 }
