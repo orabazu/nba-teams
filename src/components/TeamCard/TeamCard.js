@@ -20,7 +20,7 @@ class TeamCard extends Component {
     return (
       <div className="column is-3">
 
-        <div class="card">
+        <div class="card card-8bit">
           <div class="card-image">
             <figure class="image is-4by3">
               <img src={"logo/" + this.props.abbreviation + "-MIN.jpg"} alt="Placeholder image" />

@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
-import './App.css';
-import TeamCard from './../TeamCard/TeamCard'
 import axios from 'axios'
-import shaq from './../../assets/shaq_v2.png'
+
+import './App.css';
+import Navbar from './../Navbar/Navbar'
+import TeamCard from './../TeamCard/TeamCard'
+import Hero from './../Hero/Hero'
+import Footer from './../Footer/Footer'
+
 import tenor from './../../assets/tenor.gif'
 
 class App extends Component {
@@ -51,50 +55,9 @@ class App extends Component {
         <div className="App">
           <div className="dotted"></div>
 
+          <Navbar/>
 
-          <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
-            <div class="navbar-brand">
-              <a class="navbar-item" href="">
-                <img src={tenor} className="logo" />
-                HOOPRZ
-                </a>
-
-              <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-              </a>
-            </div>
-          </nav>
-
-
-
-
-          <section class="hero padding-top-100">
-            <div class="hero-body">
-              <div class="container">
-                <div className="columns">
-
-                  <div className="column is-1 is-gapless">
-                    <img src={shaq} className="logo"></img>
-                  </div>
-
-                  <div className="column">
-                    <h1 class="title">
-                      NBA TEAMS
-                  </h1>
-                    <h2 class="subtitle">
-
-                      Click on a team for detail
-                  </h2>
-                  </div>
-
-                </div>
-
-              </div>
-            </div>
-          </section>
-
+          <Hero title="NBA Teams" subtitle="Click to see details"/>
 
           <div class="container">
             {
@@ -114,22 +77,7 @@ class App extends Component {
             }
           </div>
 
-
-
-          <footer class="footer">
-            <div class="content has-text-centered">
-              <p>
-                Powered by <a href="https://bulma.io"><strong>Bulma</strong> by Orhun </a>. The source code is licensed
-              <a href="http://opensource.org/licenses/mit-license.php"> MIT</a>. The website content
-              is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
-            </p>
-            </div>
-          </footer>
-
-
-
-
-
+          <Footer/>
         </div>
       );
     }
