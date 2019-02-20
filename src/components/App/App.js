@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import axios from 'axios'
+import axios from 'axios';
+import dotenv from 'dotenv';
 
 import './App.css';
 import Navbar from './../Navbar/Navbar'
@@ -33,7 +34,11 @@ class App extends Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:4000/api/teams')
+    let url = 'http://localhost:4000/api/teams'
+    if (process.env.REACT_APP_STAGE === 'dev') {
+      url = 'https://nba-proxy-api.herokuapp.com/api/teams'
+    }
+    axios.get(url)
       .then(response => {
         let teamsResponse = {};
         if (response.status === 200) {
@@ -55,9 +60,9 @@ class App extends Component {
         <div className="App">
           <div className="dotted"></div>
 
-          <Navbar/>
+          <Navbar />
 
-          <Hero title="NBA Teams" subtitle="Click to see details"/>
+          <Hero title="NBA Teams" subtitle="Click to see details" />
 
           <div class="container">
             {
@@ -77,7 +82,7 @@ class App extends Component {
             }
           </div>
 
-          <Footer/>
+          <Footer />
         </div>
       );
     }
