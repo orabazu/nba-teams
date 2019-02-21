@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import dotenv from 'dotenv';
 
 import './App.css';
-import Navbar from './../Navbar/Navbar'
-import TeamCard from './../TeamCard/TeamCard'
-import Hero from './../Hero/Hero'
-import Footer from './../Footer/Footer'
+import Navbar from '../Navbar/Navbar'
+import TeamCard from '../TeamCard/TeamCard'
+import Hero from '../Hero/Hero'
+import Footer from '../Footer/Footer'
 
-import tenor from './../../assets/tenor.gif'
+import tenor from '../../assets/tenor.gif'
 
 class App extends Component {
 
@@ -17,20 +16,6 @@ class App extends Component {
     this.state = {
       teams: []
     }
-  }
-
-
-  chunk = (arr, len) => {
-
-    var chunks = [],
-      i = 0,
-      n = arr.length;
-
-    while (i < n) {
-      chunks.push(arr.slice(i, i += len));
-    }
-
-    return chunks;
   }
 
   componentDidMount() {
@@ -48,33 +33,46 @@ class App extends Component {
         this.setState({ teams: teamsResponse.data })
 
       })
+  }
 
+  chunk = (arr, len) => {
+
+    const chunks = [];
+    let i = 0;
+    const n = arr.length;
+
+    while (i < n) {
+      chunks.push(arr.slice(i, i += len));
+    }
+
+    return chunks;
   }
 
   render() {
 
-    const rows = this.chunk(this.state.teams, 4);
+    const { teams } = this.state;
+    const rows = this.chunk(teams, 4);
 
-    if (this.state.teams.length) {
+    if (teams.length) {
       return (
         <div className="App">
-          <div className="dotted"></div>
+          <div className="dotted" />
 
           <Navbar />
 
           <Hero title="NBA Teams" subtitle="Click to see details" />
 
-          <div class="container">
+          <div className="container">
             {
               rows.map((row) =>
                 <div className="columns">
                   {
-                    row.map((team, index) => (
+                    row.map(team => (
                       <TeamCard
                         abbreviation={team.abbreviation}
                         conference={team.conference}
-                        full_name={team.full_name}
-                        key={index} />
+                        fullName={team.full_name}
+                        key={team.abbreviation} />
                     ))
                   }
                 </div>
@@ -87,16 +85,16 @@ class App extends Component {
       );
     }
 
-    else {
-      return (
-        <React.Fragment>
-          <div className="center-children">
-            <img src={tenor}></img>
-          </div>
-        </React.Fragment>
-      )
-    }
+    // Loading 
+    return (
+      <React.Fragment>
+        <div className="center-children">
+          <img src={tenor} alt="" />
+        </div>
+      </React.Fragment>
+    )  
   }
+
 }
 
 export default App;
