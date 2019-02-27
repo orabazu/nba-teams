@@ -4,7 +4,7 @@ import React from 'react';
 const Hero = (props) => {
   const { title, subtitle } = props;
 
-  return (<section className="hero padding-top-100">
+  return (<section className="hero padding-top-50">
     <div className="hero-body">
       <div className="container">
         <div className="columns">

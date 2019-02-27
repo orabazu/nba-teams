@@ -1,4 +1,8 @@
 import React, { Component } from 'react';
+import {
+  Link,
+} from 'react-router-dom'
+
 import "./TeamCard.css";
 
 class TeamCard extends Component {
@@ -40,7 +44,7 @@ class TeamCard extends Component {
 
               <br />
               <p>
-                <a className="btn-8bit" href="/">Go</a>
+                <Link to={`/teams/${abbreviation}`} className="btn-8bit">Go</Link>
               </p>
             </div>
           </div>
