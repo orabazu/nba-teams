@@ -14,11 +14,8 @@ class Games extends Component {
   }
 
   componentDidMount() {
-    let url = 'http://localhost:4000/api/games'
-    if (process.env.REACT_APP_STAGE === 'dev') {
-      url = 'https://nba-proxy-api.herokuapp.com/api/games'
-    }
-    axios.get(url)
+    const url = `${process.env.REACT_APP_API_URL}/api/games`;
+    axios.get(url) 
       .then(response => {
         let gamesResponse = {};
         if (response.status === 200) {

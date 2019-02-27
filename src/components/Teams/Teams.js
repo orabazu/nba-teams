@@ -14,10 +14,7 @@ class Teams extends Component {
   }
 
   componentDidMount() {
-    let url = 'http://localhost:4000/api/teams'
-    if (process.env.REACT_APP_STAGE === 'dev') {
-      url = 'https://nba-proxy-api.herokuapp.com/api/teams'
-    }
+    const url = `${process.env.REACT_APP_API_URL}/api/teams`;
     axios.get(url)
       .then(response => {
         let teamsResponse = {};
