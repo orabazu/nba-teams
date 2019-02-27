@@ -22,8 +22,8 @@ class Games extends Component {
       .then(response => {
         let gamesResponse = {};
         if (response.status === 200) {
-          gamesResponse = JSON.parse(response.data.data)
-          //
+          // comment here!
+          gamesResponse = JSON.parse(response.data.data) 
         }
 
         this.setState({ games: gamesResponse.data })
