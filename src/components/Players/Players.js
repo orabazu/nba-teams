@@ -4,7 +4,7 @@ import axios from 'axios';
 import PlayerCard from '../PlayerCard/PlayerCard'
 import tenor from '../../assets/tenor.gif'
 import Hero from '../Hero/Hero';
-import {chunk} from '../../utils/common'
+import {chunk,API_URL} from '../../utils/common'
 
 class Players extends Component {
 
@@ -18,7 +18,7 @@ class Players extends Component {
   }
 
   componentDidMount() {
-    const url = `${process.env.REACT_APP_API_URL}/api/players`;
+    const url = `${API_URL}/api/players`;
     this.loadPlayers(url);
   }
 

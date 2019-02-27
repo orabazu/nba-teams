@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import {chunk} from '../../utils/common'
+import {chunk,API_URL} from '../../utils/common'
 
 import TeamCard from '../TeamCard/TeamCard'
 import tenor from '../../assets/tenor.gif'
@@ -15,7 +15,7 @@ class Teams extends Component {
   }
 
   componentDidMount() {
-    const url = `${process.env.REACT_APP_API_URL}/api/teams`;
+    const url = `${API_URL}/api/teams`;
     axios.get(url)
       .then(response => {
         let teamsResponse = {};

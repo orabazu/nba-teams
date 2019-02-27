@@ -12,3 +12,6 @@ const chunk = (arr, len) => {
 }
 
 exports.chunk = chunk;
+
+const API_URL = process.env.REACT_APP_API_URL ? process.env.REACT_APP_API_URL : 'https://nba-proxy-api.herokuapp.com'
+exports.API_URL = API_URL;
