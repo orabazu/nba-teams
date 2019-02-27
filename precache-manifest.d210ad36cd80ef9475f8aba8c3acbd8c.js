@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "877229cabaec46af1dc8",
+    "revision": "76c64b104b1769685ef4",
     "url": "/nba-teams/static/css/main.3de7ad56.chunk.css"
   },
   {
-    "revision": "877229cabaec46af1dc8",
-    "url": "/nba-teams/static/js/main.877229ca.chunk.js"
+    "revision": "76c64b104b1769685ef4",
+    "url": "/nba-teams/static/js/main.76c64b10.chunk.js"
   },
   {
     "revision": "f278fc1d9d73a840e821",
@@ -24,7 +24,7 @@ self.__precacheManifest = [
     "url": "/nba-teams/static/media/tenor.3a5bccb6.gif"
   },
   {
-    "revision": "26e66613f3e2b5bd30c93bf37c093944",
+    "revision": "783383dd3f59f2de3704ce53f301ca43",
     "url": "/nba-teams/index.html"
   }
 ];
