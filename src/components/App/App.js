@@ -20,8 +20,6 @@ const App = () => {
       <Route exact path="/games" component={Games} />
       <Route exact path="/players" component={Players} />
       <Route path="/" component={Footer} />
-
-
     </div>
   );
 }

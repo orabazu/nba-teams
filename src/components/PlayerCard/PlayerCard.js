@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {
   Link,
 } from 'react-router-dom'
-
+import {TEAM_LOGO_URL} from '../../utils/common'
 
 class PlayerCard extends Component {
 
@@ -27,7 +27,7 @@ class PlayerCard extends Component {
             <div className="media">
               <div className="media-left">
                 <figure className="image is-48x48">
-                  <img src={`logo/${team.abbreviation}-MIN.jpg`} alt="" />
+                  <img src={`${TEAM_LOGO_URL}${team.abbreviation}-min.jpg`} alt="" />
                 </figure>
               </div>
               <div className="media-content">

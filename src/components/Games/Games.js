@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import {chunk,API_URL} from '../../utils/common'
+import {chunk,API_URL,TEAM_LOGO_URL} from '../../utils/common'
 
 
 import tenor from '../../assets/tenor.gif'
@@ -50,7 +50,7 @@ class Games extends Component {
                             <div className="media">
                               <div className="media-left">
                                 <figure className="image is-24x24">
-                                  <img src={`logo/${game.home_team.abbreviation}-MIN.jpg`} alt="" />
+                                  <img src={`${TEAM_LOGO_URL}${game.home_team.abbreviation}-min.jpg`} alt="" />
                                 </figure>
                               </div>
                               <div className="media-content">
@@ -61,7 +61,7 @@ class Games extends Component {
                             <div className="media">
                               <div className="media-left">
                                 <figure className="image is-24x24">
-                                  <img src={`logo/${game.visitor_team.abbreviation}-MIN.jpg`} alt="" />
+                                  <img src={`${TEAM_LOGO_URL}${game.visitor_team.abbreviation}-min.jpg`} alt="" />
                                 </figure>
                               </div>
                               <div className="media-content">
