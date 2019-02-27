@@ -11,7 +11,6 @@ const Landing = () => {
     <React.Fragment>
       <Hero title="NBA Teams" subtitle="Click to see details" />
       <Teams />
-      <Footer />
     </React.Fragment>
   )
 }
