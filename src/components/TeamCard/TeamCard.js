@@ -4,6 +4,7 @@ import {
 } from 'react-router-dom'
 
 import "./TeamCard.css";
+import {TEAM_LOGO_URL} from '../../utils/common'
 
 class TeamCard extends Component {
 
@@ -21,14 +22,14 @@ class TeamCard extends Component {
         <div className="card card-8bit">
           <div className="card-image">
             <figure className="image is-4by3">
-              <img src={`logo/${abbreviation}-MIN.jpg`} alt="" />
+              <img src={`${TEAM_LOGO_URL}${abbreviation}-min.jpg`} alt="" />
             </figure>
           </div>
           <div className="card-content">
             <div className="media">
               <div className="media-left">
                 <figure className="image is-48x48">
-                  <img src={`logo/${abbreviation}-MIN.jpg`} alt="" />
+                  <img src={`${TEAM_LOGO_URL}${abbreviation}-min.jpg`} alt="" />
                 </figure>
               </div>
               <div className="media-content">

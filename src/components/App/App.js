@@ -17,11 +17,10 @@ const App = () => {
       <Route path="/" component={Navbar} />
       <Route exact path="/" component={Landing} />
       <Route exact path="/teams" component={Landing} />
+      <Route exact path="/nba-teams" component={Landing} />
       <Route exact path="/games" component={Games} />
       <Route exact path="/players" component={Players} />
       <Route path="/" component={Footer} />
-
-
     </div>
   );
 }

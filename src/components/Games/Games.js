@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import {chunk,API_URL,TEAM_LOGO_URL} from '../../utils/common'
 
 
 import tenor from '../../assets/tenor.gif'
@@ -14,7 +15,7 @@ class Games extends Component {
   }
 
   componentDidMount() {
-    const url = `${process.env.REACT_APP_API_URL}/api/games`;
+    const url = `${API_URL}/api/games`;
     axios.get(url) 
       .then(response => {
         let gamesResponse = {};
@@ -27,23 +28,11 @@ class Games extends Component {
       })
   }
 
-  chunk = (arr, len) => {
-
-    const chunks = [];
-    let i = 0;
-    const n = arr.length;
-
-    while (i < n) {
-      chunks.push(arr.slice(i, i += len));
-    }
-
-    return chunks;
-  }
 
   render() {
 
     const { games } = this.state;
-    const rows = this.chunk(games, 2);
+    const rows = chunk(games, 2);
 
     if (games.length) {
       return (
@@ -61,7 +50,7 @@ class Games extends Component {
                             <div className="media">
                               <div className="media-left">
                                 <figure className="image is-24x24">
-                                  <img src={`logo/${game.home_team.abbreviation}-MIN.jpg`} alt="" />
+                                  <img src={`${TEAM_LOGO_URL}${game.home_team.abbreviation}-min.jpg`} alt="" />
                                 </figure>
                               </div>
                               <div className="media-content">
@@ -72,7 +61,7 @@ class Games extends Component {
                             <div className="media">
                               <div className="media-left">
                                 <figure className="image is-24x24">
-                                  <img src={`logo/${game.visitor_team.abbreviation}-MIN.jpg`} alt="" />
+                                  <img src={`${TEAM_LOGO_URL}${game.visitor_team.abbreviation}-min.jpg`} alt="" />
                                 </figure>
                               </div>
                               <div className="media-content">
