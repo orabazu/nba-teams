@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import {chunk} from '../../utils/common'
 
 import TeamCard from '../TeamCard/TeamCard'
 import tenor from '../../assets/tenor.gif'
@@ -26,23 +27,10 @@ class Teams extends Component {
       })
   }
 
-  chunk = (arr, len) => {
-
-    const chunks = [];
-    let i = 0;
-    const n = arr.length;
-
-    while (i < n) {
-      chunks.push(arr.slice(i, i += len));
-    }
-
-    return chunks;
-  }
-
   render() {
 
     const { teams } = this.state;
-    const rows = this.chunk(teams, 4);
+    const rows = chunk(teams, 4);
 
     if (teams.length) {
       return (

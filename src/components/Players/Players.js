@@ -4,6 +4,7 @@ import axios from 'axios';
 import PlayerCard from '../PlayerCard/PlayerCard'
 import tenor from '../../assets/tenor.gif'
 import Hero from '../Hero/Hero';
+import {chunk} from '../../utils/common'
 
 class Players extends Component {
 
@@ -21,18 +22,6 @@ class Players extends Component {
     this.loadPlayers(url);
   }
 
-  chunk = (arr, len) => {
-
-    const chunks = [];
-    let i = 0;
-    const n = arr.length;
-
-    while (i < n) {
-      chunks.push(arr.slice(i, i += len));
-    }
-
-    return chunks;
-  }
 
   loadMore = () => {
     let { page } = this.state;
@@ -63,7 +52,7 @@ class Players extends Component {
   render() {
 
     const { players, isLoading } = this.state;
-    const rows = this.chunk(players, 4);
+    const rows = chunk(players, 4);
 
     if (players.length) {
       return (

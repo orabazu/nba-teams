@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import {chunk} from '../../utils/common'
 
 
 import tenor from '../../assets/tenor.gif'
@@ -27,23 +28,11 @@ class Games extends Component {
       })
   }
 
-  chunk = (arr, len) => {
-
-    const chunks = [];
-    let i = 0;
-    const n = arr.length;
-
-    while (i < n) {
-      chunks.push(arr.slice(i, i += len));
-    }
-
-    return chunks;
-  }
 
   render() {
 
     const { games } = this.state;
-    const rows = this.chunk(games, 2);
+    const rows = chunk(games, 2);
 
     if (games.length) {
       return (
