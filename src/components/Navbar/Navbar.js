@@ -27,6 +27,8 @@ const Navbar = () => {
         <div className="navbar-start">
           <Link to="/teams" className="navbar-item">Teams</Link>
           <Link to="/games" className="navbar-item">Games</Link>
+          <Link to="/players" className="navbar-item">Players</Link>
+
         </div>
       </div>
 

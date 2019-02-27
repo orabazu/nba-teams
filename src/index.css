@@ -80,3 +80,54 @@ h1,h2,h3,h4,h5,h6,strong{
     border-width: 4px;
 }
 
+.media-content * {
+  font-family: 'Press Start 2P', cursive;
+}
+
+
+.btn-8bit{
+  -webkit-appearance: initial;
+  border: none;
+  background: #0067b7;
+  color: #fff;
+  padding: 10px 15px;
+  margin-top: 30px;
+  position: relative;
+  z-index: 5;
+  text-decoration: none;
+  margin-left: 10px;
+  margin-right: 10px;
+  box-shadow: 0 4px 0 0 #0b4e82;
+  font-family: 'Press Start 2P', cursive;
+}
+
+button:before, .btn-8bit:before, [type="submit"]:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -4px;
+  bottom: 0;
+  z-index: -1;
+  background: #118fe4;
+}
+
+
+button:after, .btn-8bit:after, [type="submit"]:after {
+  content: '';
+  position: absolute;
+  left: -4px;
+  right: -4px;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+  background: #118fe4;
+}
+
+
+.padding-vertical-50{
+  padding-bottom: 50px;
+  padding-top: 50px;
+
+}
+
