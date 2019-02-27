@@ -1,5 +1,11 @@
 import React from 'react';
+import {
+  Link,
+} from 'react-router-dom'
+
 import tenor from "../../assets/tenor.gif"
+
+
 
 const Navbar = () => {
   return (
@@ -16,6 +22,17 @@ const Navbar = () => {
           <span aria-hidden="true" />
         </a>
       </div>
+      {/* TODO: implement is-active toggle */}
+      <div className="navbar-menu is-active">
+        <div className="navbar-start">
+          <Link to="/teams" className="navbar-item">Teams</Link>
+          <Link to="/games" className="navbar-item">Games</Link>
+          <Link to="/players" className="navbar-item">Players</Link>
+
+        </div>
+      </div>
+
+
     </nav>
   )
 }
