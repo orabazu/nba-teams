@@ -23,7 +23,7 @@ class Games extends Component {
         let gamesResponse = {};
         if (response.status === 200) {
           gamesResponse = JSON.parse(response.data.data)
-          console.log(gamesResponse);
+          //
         }
 
         this.setState({ games: gamesResponse.data })
