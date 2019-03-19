@@ -17,7 +17,7 @@ class TeamCard extends Component {
 
     const { abbreviation, fullName, conference } = this.props;
     return (
-      <div className="column is-3">
+      <div className="column is-half">
 
         <div className="card card-8bit">
           <div className="card-image">
@@ -25,13 +25,8 @@ class TeamCard extends Component {
               <img src={`${TEAM_LOGO_URL}${abbreviation}-min.jpg`} alt="" />
             </figure>
           </div>
-          <div className="card-content">
+          <div className="card-content team-card-content">
             <div className="media">
-              <div className="media-left">
-                <figure className="image is-48x48">
-                  <img src={`${TEAM_LOGO_URL}${abbreviation}-min.jpg`} alt="" />
-                </figure>
-              </div>
               <div className="media-content">
                 <p className="title is-6">{fullName}</p>
                 <p className="subtitle is-8">{abbreviation}</p>
@@ -45,7 +40,7 @@ class TeamCard extends Component {
 
               <br />
               <p>
-                <Link to={`/teams/${abbreviation}`} className="btn-8bit">Go</Link>
+                <Link to={`/teams/${abbreviation}`} className="btn-8bit">Go </Link>
               </p>
             </div>
           </div>

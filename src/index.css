@@ -1,10 +1,14 @@
 @import '../node_modules/bulma/css/bulma.css';
 @import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
+@import 'https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.css';
 
 h1,h2,h3,h4,h5,h6,strong{
     font-family: 'Press Start 2P', cursive;
 }
 
+.font-press-start{
+  font-family: 'Press Start 2P', cursive;
+}
 
 .bg-gradient {
     background: linear-gradient(270deg, #fd3f7d, #e8e648, #2758a5);
@@ -88,7 +92,7 @@ h1,h2,h3,h4,h5,h6,strong{
 .btn-8bit{
   -webkit-appearance: initial;
   border: none;
-  background: #0067b7;
+  background: #ee7709ed;;
   color: #fff;
   padding: 10px 15px;
   margin-top: 30px;
@@ -97,7 +101,7 @@ h1,h2,h3,h4,h5,h6,strong{
   text-decoration: none;
   margin-left: 10px;
   margin-right: 10px;
-  box-shadow: 0 4px 0 0 #0b4e82;
+  box-shadow: 0 4px 0 0 #c15f04;;
   font-family: 'Press Start 2P', cursive;
 }
 
@@ -109,9 +113,8 @@ button:before, .btn-8bit:before, [type="submit"]:before {
   top: -4px;
   bottom: 0;
   z-index: -1;
-  background: #118fe4;
+  background: #f78a38;;
 }
-
 
 button:after, .btn-8bit:after, [type="submit"]:after {
   content: '';
@@ -121,13 +124,51 @@ button:after, .btn-8bit:after, [type="submit"]:after {
   top: 0;
   bottom: 0;
   z-index: -1;
-  background: #118fe4;
+  background: #f78a38;;
 }
-
 
 .padding-vertical-50{
   padding-bottom: 50px;
   padding-top: 50px;
-
 }
+
+.inner-hero-body{
+  padding-left:0;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.side-menu{
+  position: absolute;
+    background: #1a1a1a;
+    background: -webkit-inear-gradient(57deg, rgb(222, 222, 222) 3%, #1a1a1a 40%);
+    background: linear-gradient(57deg, rgb(222, 222, 222) 3%, #1a1a1a 40%);
+    height: calc(100% - 51px);
+    left: 0;
+    top: 51px;
+    width: 40%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding: 20px;
+}
+
+.map-container {
+  position: absolute;
+  width: 60%;   
+  height: calc(100% - 51px);
+  background: darkorchid;
+  top: 51px;
+  left: 40%;
+  -webkit-transition: .6s cubic-bezier(.42, 0, 0, .99);
+  -moz-transition: .6s cubic-bezier(.42, 0, 0, .99);
+  -ms-transition: .6s cubic-bezier(.42, 0, 0, .99);
+  -o-transition: .6s cubic-bezier(.42, 0, 0, .99);
+  transition: .6s cubic-bezier(.42, 0, 0, .99);
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -o-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
 

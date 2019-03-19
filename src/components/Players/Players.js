@@ -4,7 +4,7 @@ import axios from 'axios';
 import PlayerCard from '../PlayerCard/PlayerCard'
 import tenor from '../../assets/tenor.gif'
 import Hero from '../Hero/Hero';
-import {chunk,API_URL} from '../../utils/common'
+import { chunk, API_URL } from '../../utils/common'
 
 class Players extends Component {
 
@@ -57,7 +57,9 @@ class Players extends Component {
     if (players.length) {
       return (
         <div className="container">
-          <Hero title="NBA players" subtitle="Chaoticaly ordered basketball monsters, press load more to see more" />
+          <div className="padding-vertical-50">
+            <Hero title="NBA players" subtitle="Chaoticaly ordered basketball monsters, press load more to see more" />
+          </div>
           {
             rows.map((row) =>
               <div className="columns">

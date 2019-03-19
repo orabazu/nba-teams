@@ -1,17 +1,31 @@
 import React from 'react';
 
+import Hero from '../Hero/Hero';
+import Teams from '../Teams/Teams';
+import Map from '../Map/Map';
+import TeamProvider from '../../context/TeamProvider';
 
-import Hero from '../Hero/Hero'
-import Footer from '../Footer/Footer'
-import Teams from '../Teams/Teams'
+import './Landing.css';
+import TeamContext from '../../context/TeamContext';
 
 
 const Landing = () => {
   return (
-    <React.Fragment>
-      <Hero title="NBA Teams" subtitle="Click to see details" />
-      <Teams />
-    </React.Fragment>
+    <TeamProvider>
+      <TeamContext.Consumer>
+        {(context) => (
+          <React.Fragment>
+            <div>
+              <Map teams={context.teams} />
+            </div>
+            <div className="side-menu">
+              <Teams />
+            </div>
+
+          </React.Fragment>
+        )}
+      </TeamContext.Consumer>
+    </TeamProvider>
   )
 }
 export default Landing;

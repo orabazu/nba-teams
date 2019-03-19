@@ -1,7 +1,8 @@
 import React from 'react';
 import {
-  Route,
+  Route
 } from 'react-router-dom'
+
 
 import './App.css';
 import Landing from '../Landing/Landing';
@@ -13,7 +14,7 @@ import Footer from '../Footer/Footer';
 const App = () => {
   return (
     <div className="App">
-      <div className="dotted" />
+      <div className="dotted" /> 
       <Route path="/" component={Navbar} />
       <Route exact path="/" component={Landing} />
       <Route exact path="/teams" component={Landing} />
