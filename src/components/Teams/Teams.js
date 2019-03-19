@@ -1,40 +1,30 @@
 import React, { Component } from 'react';
-import axios from 'axios';
-import {chunk,API_URL} from '../../utils/common'
 
+import { chunk } from '../../utils/common'
 import TeamCard from '../TeamCard/TeamCard'
+import Hero from '../Hero/Hero'
 import tenor from '../../assets/tenor.gif'
+import TeamContext from '../../context/TeamContext';
 
 class Teams extends Component {
 
   constructor() {
     super()
     this.state = {
+      // eslint-disable-next-line react/no-unused-state
       teams: []
     }
   }
 
-  componentDidMount() {
-    const url = `${API_URL}/api/teams`;
-    axios.get(url)
-      .then(response => {
-        let teamsResponse = {};
-        if (response.status === 200) {
-          teamsResponse = JSON.parse(response.data.data)
-        }
-
-        this.setState({ teams: teamsResponse.data })
-      })
-  }
-
-  render() {
-
-    const { teams } = this.state;
-    const rows = chunk(teams, 4);
+  renderTeams = (context) => {
+    const { teams } = context;
+    const rows = chunk(teams, 2);
 
     if (teams.length) {
       return (
-        <div className="container">
+        <React.Fragment>
+        <Hero title="NBA Teams" subtitle="Click to see details" />
+        <div className="">
           {
             rows.map((row) =>
               <div className="columns">
@@ -51,9 +41,10 @@ class Teams extends Component {
             )
           }
         </div>
+        </React.Fragment>
+
       );
     }
-
 
     // Loading 
     return (
@@ -64,7 +55,16 @@ class Teams extends Component {
       </React.Fragment>
     )
 
+  }
 
+  render() {
+    return (
+      <TeamContext.Consumer>
+        {(context) => (
+          this.renderTeams(context)
+        )}
+      </TeamContext.Consumer>
+    )
   }
 }
 

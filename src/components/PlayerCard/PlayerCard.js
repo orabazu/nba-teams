@@ -37,12 +37,12 @@ class PlayerCard extends Component {
               </div>
             </div>
 
-            <div className="content">
+            {/* <div className="content">
               <br />
               <p>
                 <Link to={`/teams/${team.abbreviation}`} className="btn-8bit">Go</Link>
               </p>
-            </div>
+            </div> */}
           </div>
         </div>
 
