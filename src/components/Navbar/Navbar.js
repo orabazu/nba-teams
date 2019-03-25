@@ -18,7 +18,7 @@ class Navbar extends Component {
   toggleMenu = () => {
     let { isNavbarOpen, navbarToggleClass } = this.state;
     isNavbarOpen = !isNavbarOpen;
-    navbarToggleClass = isNavbarOpen ? 'navbar-menu is-active' : 'navbar-menu' ;
+    navbarToggleClass = isNavbarOpen ? 'navbar-menu is-active' : 'navbar-menu';
     this.setState({
       isNavbarOpen,
       navbarToggleClass,
@@ -30,10 +30,10 @@ class Navbar extends Component {
     return (
       <nav className="navbar is-fixed-top" role="navigation" aria-label="main navigation">
         <div className="navbar-brand">
-          <a className="navbar-item" href="/">
+          <Link className="navbar-item" to="/nba-teams">
             <img src={tenor} className="logo" alt="" />
             HOOPRZ
-                  </a>
+                  </Link>
 
           <a role="button" className="navbar-burger" onClick={this.toggleMenu}
             aria-label="menu" aria-expanded="false">

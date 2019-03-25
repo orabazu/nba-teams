@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import mapboxgl from 'mapbox-gl';
 import TeamContext from '../../context/TeamContext';
-import {TEAM_LOGO_URL} from '../../utils/common'
+import { TEAM_LOGO_URL } from '../../utils/common'
 
 mapboxgl.accessToken = 'pk.eyJ1Ijoib3plcm9yaHVuIiwiYSI6ImNqYmF4NHh2dTEwbTAycHAzbnd4azhwcGEifQ.LsST6QrnJ0XEar6wgnnfSg';
 
@@ -23,9 +23,10 @@ class Map extends Component {
     this.initMap(teams);
   }
 
-   // TODO: change this method
-   componentWillReceiveProps(nextProp){
-    if(this.props.teams.length === nextProp.teams.length){
+  // TODO: change this method
+  componentWillReceiveProps(nextProp) {
+    const { teams } = this.props;
+    if (teams.length === nextProp.teams.length) {
       this.drawMarkers(nextProp.teams);
     }
   }
@@ -35,6 +36,18 @@ class Map extends Component {
     if (teams.length !== prevProps.teams.length) {
       this.drawMarkers(teams);
     }
+
+    const { selectedCoords } = this.props;
+    if (selectedCoords[0] !== prevProps.selectedCoords[0]) {
+      this.flyToJob(selectedCoords)
+    }
+  }
+
+  flyToJob(coords) {
+    this.map.flyTo({
+      center: [coords[1], coords[0]],
+      zoom: 11
+    });
   }
 
   initMap(teams) {
@@ -48,16 +61,11 @@ class Map extends Component {
       bearing: 27
     });
 
-    // this.map.on('load', () => {
-    //   alert `map load`;
-    // })
-
     this.drawMarkers(teams);
 
   }
 
   drawMarkers(teams) {
-    console.log(teams)
     const markers = [];
     const cleanMarkers = () => {
       let { markers } = this.state;
@@ -68,22 +76,20 @@ class Map extends Component {
       // create DOM element for the marker
 
       if (team.location) {
-        let markerIcon;
         const el = document.createElement('div');
         el.className = 'marker';
         el.style.background = `url(${TEAM_LOGO_URL}${team.abbreviation}-min.jpg)`;
-        // el.style.background = `url(https://placehold.co/32x32)`
         el.style.width = '32px';
         el.style.height = '32px';
         el.style.backgroundSize = '32px 32px';
         el.style.backgroundRepeat = 'no-repeat';
 
-         // create the popup
+        // create the popup
         //  const popup = new mapboxgl.Popup({ offset: 25 })
         //  .setText(`asdsds`);
 
         try {
-          const marker = new mapboxgl.Marker(el)      
+          const marker = new mapboxgl.Marker(el)
             .setLngLat([team.location[1], team.location[0]])
             // .setPopup(popup)
             .addTo(this.map);
@@ -104,6 +110,7 @@ class Map extends Component {
     this.map.resize();
     this.setState({ markers })
   }
+
 
   render() {
     return (

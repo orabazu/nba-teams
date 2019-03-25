@@ -103,6 +103,7 @@ h1,h2,h3,h4,h5,h6,strong{
   margin-right: 10px;
   box-shadow: 0 4px 0 0 #c15f04;;
   font-family: 'Press Start 2P', cursive;
+  cursor: pointer;
 }
 
 button:before, .btn-8bit:before, [type="submit"]:before {
@@ -141,8 +142,8 @@ button:after, .btn-8bit:after, [type="submit"]:after {
 .side-menu{
   position: absolute;
     background: #1a1a1a;
-    background: -webkit-inear-gradient(57deg, rgb(222, 222, 222) 3%, #1a1a1a 40%);
-    background: linear-gradient(57deg, rgb(222, 222, 222) 3%, #1a1a1a 40%);
+    background: -webkit-inear-gradient(57deg, rgb(222, 222, 222) 3%, #fff 40%);
+    background: linear-gradient(57deg, rgb(222, 222, 222) 3%, #fff 40%);
     height: calc(100% - 51px);
     left: 0;
     top: 51px;

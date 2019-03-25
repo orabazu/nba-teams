@@ -16,6 +16,7 @@ class Teams extends Component {
     }
   }
 
+
   renderTeams = (context) => {
     const { teams } = context;
     const rows = chunk(teams, 2);
@@ -23,24 +24,23 @@ class Teams extends Component {
     if (teams.length) {
       return (
         <React.Fragment>
-        <Hero title="NBA Teams" subtitle="Click to see details" />
-        <div className="">
-          {
-            rows.map((row) =>
-              <div className="columns">
-                {
-                  row.map(team => (
-                    <TeamCard
-                      abbreviation={team.abbreviation}
-                      conference={team.conference}
-                      fullName={team.full_name}
-                      key={team.abbreviation} />
-                  ))
-                }
-              </div>
-            )
-          }
-        </div>
+          <Hero title="NBA Teams" subtitle="Click to fly on map" />
+          <div className="">
+            {
+              rows.map((row) =>
+                <div className="columns">
+                  {
+                    row.map(team => (
+                      <TeamCard
+                        team={team}
+                        key={team.abbreviation}
+                        flyToFn={context.flyToTeam} />
+                    ))
+                  }
+                </div>
+              )
+            }
+          </div>
         </React.Fragment>
 
       );
