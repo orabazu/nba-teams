@@ -1,30 +1,30 @@
 self.__precacheManifest = [
   {
-    "revision": "648d4f1cfc5ef44c04d7",
-    "url": "/nba-teams/static/css/main.a78d9a0f.chunk.css"
+    "revision": "fb252ea3a458c0cfde33",
+    "url": "/nba-teams/static/css/main.01c665e9.chunk.css"
   },
   {
-    "revision": "648d4f1cfc5ef44c04d7",
-    "url": "/nba-teams/static/js/main.648d4f1c.chunk.js"
+    "revision": "fb252ea3a458c0cfde33",
+    "url": "/nba-teams/static/js/main.fb252ea3.chunk.js"
   },
   {
     "revision": "f278fc1d9d73a840e821",
     "url": "/nba-teams/static/js/runtime~main.f278fc1d.js"
   },
   {
-    "revision": "c8f82532f14f35420da9",
+    "revision": "508c04055afe7c771926",
     "url": "/nba-teams/static/css/2.9f31b425.chunk.css"
   },
   {
-    "revision": "c8f82532f14f35420da9",
-    "url": "/nba-teams/static/js/2.c8f82532.chunk.js"
+    "revision": "508c04055afe7c771926",
+    "url": "/nba-teams/static/js/2.508c0405.chunk.js"
   },
   {
     "revision": "3a5bccb675f32fbe5ebbf24d93f19838",
     "url": "/nba-teams/static/media/tenor.3a5bccb6.gif"
   },
   {
-    "revision": "c9c7c178d1f2aaf099037a455788cbb7",
+    "revision": "9459654bf3d1d8f6efa34229c0a6ef9c",
     "url": "/nba-teams/index.html"
   }
 ];
