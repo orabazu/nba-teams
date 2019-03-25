@@ -9,6 +9,8 @@ export default class TeamProvider extends Component {
     super(props);
     this.state = {
       teams: [],
+      selectedCoords: [],
+      flyToTeam: this.flyToTeam,
     };
   }
 
@@ -20,9 +22,16 @@ export default class TeamProvider extends Component {
         if (response.status === 200) {
           teamsResponse = response.data.data;
         }
-
         this.setState({ teams: teamsResponse.teams })
       })
+  }
+
+  flyToTeam = (team) => {
+    if (team.location && team.location.length) {
+      this.setState({
+        selectedCoords: team.location
+      })
+    }
   }
   
 

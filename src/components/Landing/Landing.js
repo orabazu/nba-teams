@@ -1,6 +1,5 @@
 import React from 'react';
 
-import Hero from '../Hero/Hero';
 import Teams from '../Teams/Teams';
 import Map from '../Map/Map';
 import TeamProvider from '../../context/TeamProvider';
@@ -16,7 +15,7 @@ const Landing = () => {
         {(context) => (
           <React.Fragment>
             <div>
-              <Map teams={context.teams} />
+              <Map teams={context.teams} selectedCoords={context.selectedCoords}/>
             </div>
             <div className="side-menu">
               <Teams />

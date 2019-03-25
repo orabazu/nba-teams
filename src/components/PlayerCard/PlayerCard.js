@@ -1,7 +1,4 @@
 import React, { Component } from 'react';
-import {
-  Link,
-} from 'react-router-dom'
 import {TEAM_LOGO_URL} from '../../utils/common'
 
 class PlayerCard extends Component {
