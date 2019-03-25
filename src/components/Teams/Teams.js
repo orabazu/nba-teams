@@ -15,8 +15,7 @@ class Teams extends Component {
       teams: []
     }
   }
-
-
+  
   renderTeams = (context) => {
     const { teams } = context;
     const rows = chunk(teams, 2);

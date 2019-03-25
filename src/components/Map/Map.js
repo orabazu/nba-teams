@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import mapboxgl from 'mapbox-gl';
 import TeamContext from '../../context/TeamContext';
+
 import { TEAM_LOGO_URL } from '../../utils/common'
 
 mapboxgl.accessToken = 'pk.eyJ1Ijoib3plcm9yaHVuIiwiYSI6ImNqYmF4NHh2dTEwbTAycHAzbnd4azhwcGEifQ.LsST6QrnJ0XEar6wgnnfSg';
@@ -36,7 +37,6 @@ class Map extends Component {
     if (teams.length !== prevProps.teams.length) {
       this.drawMarkers(teams);
     }
-
     const { selectedCoords } = this.props;
     if (selectedCoords[0] !== prevProps.selectedCoords[0]) {
       this.flyToJob(selectedCoords)
@@ -76,6 +76,10 @@ class Map extends Component {
       // create DOM element for the marker
 
       if (team.location) {
+
+        const el = document.createElement('div');
+        el.className = 'marker';
+        el.style.background = `url(${TEAM_LOGO_URL}${team.abbreviation}-min.jpg)`;
         const el = document.createElement('div');
         el.className = 'marker';
         el.style.background = `url(${TEAM_LOGO_URL}${team.abbreviation}-min.jpg)`;
@@ -84,7 +88,6 @@ class Map extends Component {
         el.style.backgroundSize = '32px 32px';
         el.style.backgroundRepeat = 'no-repeat';
 
-        // create the popup
         //  const popup = new mapboxgl.Popup({ offset: 25 })
         //  .setText(`asdsds`);
 
@@ -110,8 +113,6 @@ class Map extends Component {
     this.map.resize();
     this.setState({ markers })
   }
-
-
   render() {
     return (
       <TeamContext.Consumer>
