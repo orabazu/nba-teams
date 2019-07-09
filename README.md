@@ -6,7 +6,7 @@ An app for practising React
 
 # Images
 
-I've downloaded players images using [elhanarinc](https://github.com/elhanarinc/nbaphotocrawler)'s awesome crawler than turn them into 8bit-like images using [pixelator](http://pixelatorapp.com/)
+I've downloaded images of players using [elhanarinc](https://github.com/elhanarinc/nbaphotocrawler)'s awesome crawler than turn them into 8bit-like images using [pixelator](http://pixelatorapp.com/)
 
 # Backend 
 
