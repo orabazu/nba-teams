@@ -4,11 +4,11 @@
   "private": true,
   "homepage": "http://zhunor.github.io/nba-teams",
   "dependencies": {
-    "axios": "^0.18.0",
-    "bulma": "^0.7.4",
+    "axios": "^0.18.1",
+    "bulma": "^0.7.5",
     "mapbox-gl": "^0.53.1",
-    "react": "^16.8.2",
-    "react-dom": "^16.8.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
     "react-router-dom": "^4.3.1",
     "react-scripts": "2.1.5"
   },
@@ -30,14 +30,14 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "eslint-config-airbnb": "^17.1.0",
-    "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-config-prettier": "^4.0.0",
-    "eslint-plugin-import": "^2.16.0",
-    "eslint-plugin-jsx-a11y": "^6.2.1",
-    "eslint-plugin-prettier": "^3.0.1",
-    "eslint-plugin-react": "^7.12.4",
+    "eslint-config-airbnb": "^17.1.1",
+    "eslint-config-airbnb-base": "^13.2.0",
+    "eslint-config-prettier": "^4.3.0",
+    "eslint-plugin-import": "^2.18.0",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-react": "^7.14.2",
     "gh-pages": "^2.0.1",
-    "prettier": "^1.16.4"
+    "prettier": "^1.18.2"
   }
 }
