@@ -4,7 +4,7 @@
   "private": true,
   "homepage": "http://zhunor.github.io/nba-teams",
   "dependencies": {
-    "axios": "^0.18.1",
+    "axios": "^0.21.1",
     "bulma": "^0.7.5",
     "mapbox-gl": "^0.53.1",
     "react": "^16.8.6",
